@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Violet Weather Card</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+  <!-- Decorative shapes -->
+  <div class="sun"></div>
+  <div class="moon"></div>
+
+
+  <!-- Main wrapper -->
+  <div class="wrap">
+
+  <div class="title-header">
+  <img src="images/extras/windy.png" alt="Weather Logo" class="title-icon">
+  Weather App
+</div>
+
+
+<div class="search">
+  <input type="text" placeholder="Search city..." />
+  <button class="search-btn">
+    <img src="images/extras/frosty.png" alt="Search" class="search-icon">
+  </button>
+</div>
+
+    <!-- Weather Card -->
+    <div class="card" role="region" aria-label="Weather card">
+      <div class="top">
+        <div>
+          <div class="location"></div>
+          <div class="date"></div>
+        </div>
+        <div class="date small"></div>
+      </div>
+<div class="temp-row">
+  <div class="icon" aria-hidden="true">
+    <img class="weather-icon" src="images/sunny.png" alt="Weather">
+  </div>
+  <div>
+    <div class="temp">
+      <span></span>
+    </div> 
+    <small>
+      <img src="images/extras/temp.png" alt="Temperature icon" class="temp-icon">
+      Temperature
+    </small>
+    <div class="cond">Partly Cloudy • Light breeze</div>
+  </div>
+</div>
+
+
+      <div class="details" aria-hidden="true">
+        <div class="detail">
+          <div class="small">Humidity</div>
+          <div style="font-weight:600;margin-top:6px" class="humidity"></div>
+        </div>
+        <div class="detail">
+          <div class="small">Wind</div>
+          <div style="font-weight:600;margin-top:6px"class="wind"></div>
+        </div>
+        <div class="detail">
+          <div class="small">Precip.</div>
+          <div style="font-weight:600;margin-top:6px"class="pressure"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Extra 3 small cards -->
+<div class="extra-cards">
+  <div class="extra-card">
+    <img src="images/extras/heatwave.png" alt="Card 1">
+    <div class="extra-title">Current Weather</div>
+  </div>
+
+  <div class="extra-card">
+    <img src="images/extras/humidity.png" alt="Card 2">
+    <div class="extra-title">Percentages</div>
+  </div>
+
+  <div class="extra-card">
+    <img src="images/extras/bad-weather.png" alt="Card 3">
+    <div class="extra-title">Threats</div>
+  </div>
+  </div>
+
+<script>
+    const apiKey = "";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+    const searchBox = document.querySelector(".search input");
+    const searchBtn = document.querySelector(".search button");
+
+    const weatherIcon = document.querySelector(".weather-icon");
+
+    async function checkWeather(city) {
+        const response = await fetch(apiUrl + city +`&appid=${apiKey}`);
+        var data = await response.json();
+        
+     
+        document.querySelector(".location").innerHTML = data.name + " City";
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+      document.querySelector(".pressure").innerHTML = data.main.pressure + " hPa";
+
+if (data.weather[0].main === "Clouds") {
+  weatherIcon.src = "images/cloudy.png";
+} else if (data.weather[0].main === "Clear") {
+  weatherIcon.src = "images/sunny.png";
+} else if (data.weather[0].main === "Rain") {
+  weatherIcon.src = "images/rainyday.png";
+} else if (data.weather[0].main === "Drizzle") {
+  weatherIcon.src = "images/drizzle.png";
+} else if (data.weather[0].main === "Thunderstorm") {
+  weatherIcon.src = "images/thunderstorm.png";
+} else if (data.weather[0].main === "Snow") {
+  weatherIcon.src = "images/snowy.png";  // or blizzard.png if you prefer
+} else if (
+  data.weather[0].main === "Mist" ||
+  data.weather[0].main === "Fog" ||
+  data.weather[0].main === "Haze" ||
+  data.weather[0].main === "Smoke"
+) {
+  weatherIcon.src = "images/foggy.png";
+} else {
+  // fallback if none match
+  weatherIcon.src = "images/sunny.png";
+}
+
+document.querySelector(".card").style.display = "block";
+
+    }
+
+    searchBtn.addEventListener("click", ()=>{
+        checkWeather(searchBox.value);
+    });
+
+    function updateTime() {
+    const now = new Date();
+
+    // Format hh:mm (2-digit hours + 2-digit minutes)
+    const time = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    document.querySelector(".date.small").innerHTML = "Updated " + time;
+}
+
+// Run once when page loads
+updateTime();
+
+// (Optional) update every minute
+setInterval(updateTime, 60000);
+
+</script>
+
+</body>
+</html>
