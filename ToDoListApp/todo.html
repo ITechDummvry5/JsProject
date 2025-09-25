@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List UI</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <!-- Decorative shapes -->
+  <div class="sun"></div>
+  <div class="moon"></div>
+
+  <!-- Main wrapper -->
+  <div class="wrap">
+
+    <div class="title-header">
+      <img src="images/list.png" alt="App Logo" class="title-icon">
+      To-Do List
+    </div>
+
+    <!-- Input section -->
+    <div class="todolist">
+      <input type="text" id="inputBox" placeholder="Add a new task..." />
+      <button class="todolist-btn" onclick="addTask()">
+        <img src="images/Addlist.png" alt="Add" class="todolist-icon">
+      </button>
+    </div>
+
+    <!-- Main card -->
+    <div class="card">
+      <div class="tasks" id="listcontainer">
+        <!-- New tasks will appear here -->
+      </div>
+    </div>
+
+    <!-- Extra cards -->
+    <div class="extra-cards">
+      <div class="extra-card">
+        <img src="images/today.png" alt="Card 1">
+        <div class="extra-title">Today</div>
+      </div>
+      <div class="extra-card">
+        <img src="images/completed.png" alt="Card 2">
+        <div class="extra-title">Completed</div>
+      </div>
+      <div class="extra-card">
+        <img src="images/pending.png" alt="Card 3">
+        <div class="extra-title">Pending</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">Made by <span>Author Name</span></div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
