@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Generate Strong Password</title>
+  <link rel="stylesheet" href="gTpass.css">
+  <link rel="shortcut icon" href="images/pencil.png" type="image/x-icon">
+
+</head>
+<body>
+  <!-- Decorative shapes -->
+  <div class="sun"></div>
+  <div class="moon"></div>
+
+  <!-- Main wrapper -->
+  <div class="wrap">
+
+    <div class="title-header">
+      <img src="images/pencil.png" alt="App Logo" class="title-icon">
+      Generate <span>Strong Password</span>
+    </div>
+
+    <!-- Output section -->
+    <div class="outputpass">
+      <input type="text" id="password" placeholder="Generated password will appear here..." />
+      <button class="outputpass-btn" onclick="createPassword()">
+        <img src="images/generate.png" alt="Generate" class="outputpass-icon">Generate
+      </button>
+    </div>
+
+
+    <!-- Extra cards -->
+    <div class="extra-cards">
+      <div class="extra-card">
+        <img src="images/copy.png" alt="Card 1">
+        <div class="extra-title">Copy</div>
+      </div>
+      <div class="extra-card">
+        <img src="images/saved.png" alt="Card 2">
+        <div class="extra-title">Saved</div>
+      </div>
+      <div class="extra-card">
+        <img src="images/customize.png" alt="Card 3">
+        <div class="extra-title">Customize</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">Made by <span>TechDummvry!</span></div>
+
+  <script src="gTpass.js"></script>
+
+</body>
+</html>
