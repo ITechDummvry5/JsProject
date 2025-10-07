@@ -104,7 +104,7 @@ body {
   font-size: 22px;
   background: linear-gradient(270deg, #00b09b, #96c93d);
   background-size: 200% 200%;
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
   animation: gradientMove 4s linear infinite;
 }
