@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TechDummvry Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="images/profile.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+  <img src="images/profile.png" alt="Logo" id="logo">
+</div>
+
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">SERVICES</a></li>
+        <li><a href="#">HIRE ME</a></li>
+      </ul>
+    </nav>
+<div class="mode-toggle">
+  <img src="images/sun.png" alt="Toggle Mode" id="modeIcon">
+</div>
+
+  </header>
+
+  <section class="hero">
+    <div class="text">
+      <h1>I'm <span>Ignacio</span> Charles</h1>
+      <p>This is my official portfolio website to showcase all my works related to web development and UI design.</p>
+      <button>Download CV</button>
+
+      <div class="socials">
+        <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="images/behance.png" alt="Behance"></a>
+        <a href="#"><img src="images/dribble.png" alt="Dribbble"></a>
+        <a href="#"><img src="images/github.png" alt="GitHub"></a>
+      </div>
+    </div>
+
+    <div class="image">
+      <div class="shape"></div>
+      <img src="images/Portrait.webp" alt="Android18">
+    </div>
+  </section>
+
+<script>
+const body = document.body;
+const toggle = document.querySelector('.mode-toggle img');
+const logo = document.getElementById('logo'); // your logo
+
+let darkMode = false;
+
+toggle.addEventListener('click', () => {
+  darkMode = !darkMode;
+  body.classList.toggle('dark-mode', darkMode);
+
+  if (darkMode) {
+    toggle.src = 'images/moon.png';     // moon icon
+    logo.src = 'images/darklogo.png';   // your dark logo
+  } else {
+    toggle.src = 'images/sun.png';      // sun icon
+    logo.src = 'images/profile.png';    // your light logo
+  }
+});
+</script>
+
+
+</body>
+</html>
