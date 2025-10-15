@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Excel Remote App</title>
+  <link rel="stylesheet" href="emailexcel.css" />
+  <link rel="shortcut icon" href="images/profile.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/profile.png" alt="Brand Logo">
+    </div>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Collection</a>
+      <a href="#">Contact</a>
+    </nav>
+    <a href="#" class="contact-btn">Contact Us</a>
+  </header>
+
+  <main class="hero">
+    <section class="hero-left">
+      <p class="intro">Coming Soon!</p>
+      <h1>New Brand Incoming</h1>
+      <p class="role">Be the first to experience our latest collection</p>
+      <form class="subscribe" name="submit-to-google-sheet">
+        <input type="email" name="email" placeholder="Enter your email" aria-label="Email">
+        <button type="submit"><img src="images/send.png" alt=""></button>
+        
+      </form>
+        <span id="msg"></span>
+
+      
+    </section>
+  </main>
+  
+  <script>
+
+  const scriptURL = '<SCRIPT URL>'
+  const form = document.forms['submit-to-google-sheet']
+  const message = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Thank You For Subscribing!"
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+
+  </script>
+</body>
+</html>
