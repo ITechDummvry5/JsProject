@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="emailexcel.css" />
   <link rel="shortcut icon" href="images/profile.png" type="image/x-icon">
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -28,29 +30,30 @@
       <form class="subscribe" name="submit-to-google-sheet">
         <input type="email" name="email" placeholder="Enter your email" aria-label="Email">
         <button type="submit"><img src="images/send.png" alt=""></button>
-        
-      </form>
-        <span id="msg"></span>
 
-      
+      </form>
+      <span id="msg"></span>
+
+
     </section>
   </main>
-  
+
   <script>
 
-  const scriptURL = '<SCRIPT URL>'
-  const form = document.forms['submit-to-google-sheet']
-  const message = document.getElementById("msg")
+    const scriptURL = '<SCRIPT URL>'
+    const form = document.forms['submit-to-google-sheet']
+    const message = document.getElementById("msg")
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-        msg.innerHTML = "Thank You For Subscribing!"
-      })
-      .catch(error => console.error('Error!', error.message))
-  })
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          msg.innerHTML = "Thank You For Subscribing!"
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
 
   </script>
 </body>
+
 </html>
