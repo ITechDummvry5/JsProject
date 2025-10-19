@@ -32,7 +32,7 @@
     cursor:pointer;
 }
 .content{
-    top :50%;
+    top :53%;
     position: absolute;
     transform: translateY(-50%);
   
@@ -47,12 +47,11 @@
 }
 .content p{
     color: var(--white);
-    font-size: 22px;
+    font-size: 18px;
     font-weight:400;
     margin-bottom: 3px;
     
 }
-
 .content h1 span{
     color: var(--persian-red);
     text-shadow: 2px 0px 6px var(--oxford-blue);
@@ -116,5 +115,41 @@ button{
 
 .integrate-btn:active {
   transform: scale(0.96);
+}
+.integrate-time{
+  display: flex;
+}
+.integrate-time div{
+ flex-basis: 100px;
+
+}
+.integrate-time div p{
+ font-size: 60px;
+ margin-bottom: 3px;
+}
+.integrate-time span{
+color: var(--eminence);
+font-weight: 600;
+line-height: 1em;
+ letter-spacing: .7px;
+ text-shadow: 2px 2px 3px var(--oxford-blue);
+
+}
+.spade-card{
+  width: 260px;
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  animation:spade-card 3s linear infinite;
+}
+@keyframes spade-card{
+ 0%{
+  bottom: 0;
+  opacity: 0;
+ }
+  100%{
+  bottom: 105%;
+  opacity: 1;
+ }
 }
 
