@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Calendar</title>
+  <link rel="stylesheet" href="calendar.css" />
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+    
+  <div class="calendar">
+    <div class="left">
+         <p id="time">00:00</p> 
+      <p id="date">01</p>
+      <p id="day">Sunday</p>
+    </div>
+    <div class="right">
+      <p id="month">January</p>
+      <p id="year">2025</p>
+    </div>
+
+
+  </div>
+  <div class="footer">Made by <span>TechDummvry!</span></div>
+
+
+  <script>
+  const date = document.getElementById("date");
+  const day = document.getElementById("day");
+  const month = document.getElementById("month");
+  const year = document.getElementById("year");
+  const time = document.getElementById("time");
+
+  const weekdays = [
+    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+  ];
+
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  function updateClock() {
+    const today = new Date();
+
+    // 📅 Date parts
+    date.textContent = today.getDate();
+    day.textContent = weekdays[today.getDay()];
+    month.textContent = months[today.getMonth()];
+    year.textContent = today.getFullYear();
+
+    // 🕒 Time parts
+    let hours = today.getHours();
+    const minutes = today.getMinutes().toString().padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12; // convert to 12-hour format
+
+    // 🧠 Display time + AM/PM
+    time.innerHTML = `${hours}:${minutes} <span class="ampm">${ampm}</span>`;
+  }
+
+  // Run immediately and update every second
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>

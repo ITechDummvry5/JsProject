@@ -1,0 +1,166 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro Display", "Poppins", sans-serif;
+}
+
+/* BODY BACKGROUND */
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Warm soft orange-red gradient like your image */
+  background: radial-gradient(
+    circle at center,
+    #ff814c 0%,
+    #d65b32 40%,
+    #b23c26 70%,
+    #5b1812 100%
+  );
+
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+
+
+
+
+/* CALENDAR CONTAINER */
+.calendar {
+  width: 460px;
+  height: 250px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #fafafa;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.calendar:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* LEFT PANEL */
+.left {
+  width: 42%;
+  background: #fff;
+  color: #d12600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  padding: 10px;
+  letter-spacing: -1px;
+}
+.left p:first-child {
+  font-size: 32px;
+  font-weight: 700;
+  color: #180202;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 3px rgba(209, 38, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+.left p:nth-child(2) {
+  font-size: 90px;
+  line-height: 1;
+  font-weight: 800;
+  color: #d12600;
+  text-shadow: 0 2px 6px rgba(209, 38, 0, 0.25);
+}
+
+
+.left p:last-child {
+  font-size: 22px;
+  font-weight: 600;
+  color: #d12600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* RIGHT PANEL */
+.right {
+  width: 58%;
+  background: linear-gradient(135deg, #ff6d4d, #d12600);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.right p:first-child {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.right p:last-child {
+  font-size: 74px;
+  font-weight: 600;
+  margin-top: 6px;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+/* SUBTLE FLOATING GLOW */
+.calendar::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 90, 50, 0.25), transparent 70%);
+  top: -80px;
+  right: -80px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+
+#time {
+  font-size: 36px;
+  font-weight: 700;
+  color: #8b1400;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+}
+
+#time .ampm {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #b23c26;
+  opacity: 0.8;
+  position: relative;
+  top: -5px;
+}
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #C0C0C0;
+  z-index: 10;
+}
+.footer span {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 0 8px #d12600;
+}
