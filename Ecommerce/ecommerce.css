@@ -30,7 +30,7 @@ body {
 /* IMAGE */
 .product-image {
     flex: 1;
-    background: #f7f7f7;
+    background: #1B211A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,7 +152,7 @@ body {
 
 /* COUPON (SECONDARY) */
 .cart-row select {
-    width: 25%;
+    width: 35%;
     height: 34px;
     padding: 0 8px;
     font-size: 13px;
@@ -170,7 +170,7 @@ body {
 
 /* ADD TO CART (PRIMARY) */
 .cart-row .add-cart {
-    width: 75%;
+    width: 65%;
     height: 48px;
     padding: 0 20px;
     background: #111;
