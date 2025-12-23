@@ -3,48 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Ecommerce</title>
     <link rel="stylesheet" href="ecommerce.css">
-    <title>Simple Js Ecommerce</title>
 </head>
 <body>
 
-    <div class="container">
-        <div class="product">
+<div class="wrapper">
+    <div class="product-card">
 
-            <div class="gallery">
-                <img src="images/model-removebg-preview.png" alt="">
+        <!-- IMAGE -->
+        <div class="product-image">
+            <img src="images/model-removebg-preview.png" alt="Product">
+        </div>
+
+        <!-- DETAILS -->
+        <div class="product-info">
+            <h1>Casual T-Shirt</h1>
+            <p class="price">$14.00 <span>30% OFF</span></p>
+
+            <p class="description">
+                Soft cotton casual t-shirt with modern fit. Comfortable, breathable,
+                and perfect for everyday wear.
+            </p>
+
+            <!-- SIZE -->
+            <div class="option">
+                <label>Size</label>
+                <div class="options">
+                    <button>S</button>
+                    <button>M</button>
+                    <button class="active">L</button>
+                    <button>XL</button>
+                </div>
             </div>
 
-                <div class="details">
-                    <h1>Casual T Shirt 18</h1>
-                    <h2>$14.00</h2>
-                    <h3>30% OFF</h3>
-                    <p>black and yellow - dark yellow Color Palette</p>
-                    <form>
-                        <div class="size-select">
-                            <p>Size</p>
-                            <label for="small">
-                                <input type="radio" name="size" id="small">
-                                <span>S</span>
-                            </label>
-                             <label for="medium">
-                                <input type="radio" name="size" id="medium">
-                                <span>M</span>
-                            </label>
-                               <label for="large">
-                                <input type="radio" name="size" id="large">
-                                <span>L</span>
-                            </label>
-                                <label for="extra-large">
-                                <input type="radio" name="size" id="extra-large">
-                                <span>XL</span>
-                            </label>
-                        </div>
-                    </form>
+            <!-- COLOR -->
+            <div class="option">
+                <label>Color</label>
+                <div class="colors">
+                    <span class="c1"></span>
+                    <span class="c2"></span>
+                    <span class="c3"></span>
+                    <span class="c4 active"></span>
                 </div>
+            </div>
 
+            <!-- QUANTITY -->
+            <div class="option">
+                <label>Quantity</label>
+                <div class="quantity">
+                    <button>-</button>
+                    <input type="number" value="1" min="1">
+                    <button>+</button>
+                </div>
+            </div>
+
+            <!-- BUTTON -->
+            <button class="add-cart">Add to Cart</button>
         </div>
+
     </div>
-    
+</div>
+
+<script src="ecommerce.js"></script>
 </body>
 </html>
