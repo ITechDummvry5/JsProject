@@ -7,11 +7,20 @@ document.querySelectorAll('.options button').forEach(btn => {
     });
 });
 
-/* COLOR SELECTION */
-document.querySelectorAll('.colors span').forEach(color => {
+/* COLOR SELECTION + IMAGE CHANGE */
+const productImg = document.getElementById('productImg');
+const colors = document.querySelectorAll('.colors span');
+
+colors.forEach(color => {
     color.addEventListener('click', () => {
-        document.querySelectorAll('.colors span').forEach(c => c.classList.remove('active'));
+
+        // Active class
+        colors.forEach(c => c.classList.remove('active'));
         color.classList.add('active');
+
+        // Change image
+        const newImage = color.getAttribute('data-image');
+        productImg.src = newImage;
     });
 });
 
@@ -29,3 +38,22 @@ plusBtn.addEventListener('click', () => {
     qtyInput.value = parseInt(qtyInput.value) + 1;
 });
 
+
+const basePrice = 14.00;
+const priceEl = document.getElementById('price');
+const couponSelect = document.getElementById('couponSelect');
+const discountText = document.getElementById('discountText');
+
+couponSelect.addEventListener('change', () => {
+    const discount = parseInt(couponSelect.value);
+    let finalPrice = basePrice;
+
+    if (discount > 0) {
+        finalPrice = basePrice - (basePrice * discount / 100);
+        discountText.textContent = `(${discount}% OFF)`;
+    } else {
+        discountText.textContent = '';
+    }
+
+    priceEl.textContent = finalPrice.toFixed(2);
+});

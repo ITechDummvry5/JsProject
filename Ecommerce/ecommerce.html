@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Ecommerce</title>
+    <title>Dragonball Ecommerce</title>
     <link rel="stylesheet" href="ecommerce.css">
+    <link rel="shortcut icon" href="images/image-white.png" type="image/x-icon">
 </head>
 <body>
 
@@ -13,17 +14,18 @@
 
         <!-- IMAGE -->
         <div class="product-image">
-            <img src="images/model-removebg-preview.png" alt="Product">
+            <img id="productImg" src="images/image-blue.png" alt="Product">
         </div>
 
         <!-- DETAILS -->
         <div class="product-info">
-            <h1>Casual T-Shirt</h1>
-            <p class="price">$14.00 <span>30% OFF</span></p>
-
+            <h1>Casual Clothes Android 18</h1>
+            <p class="price">
+    $<span id="price">14.00</span>
+    <span class="discount-text" id="discountText"></span>
+</p>
             <p class="description">
-                Soft cotton casual t-shirt with modern fit. Comfortable, breathable,
-                and perfect for everyday wear.
+                A blue denim vest and skirt (with the Red Ribbon logo on the back of the vest) with dark blue tights, a brown belt, brown boots, and a black shirt that has white and black striped long sleeves
             </p>
 
             <!-- SIZE -->
@@ -34,6 +36,7 @@
                     <button>M</button>
                     <button class="active">L</button>
                     <button>XL</button>
+                    <button>XXL</button>
                 </div>
             </div>
 
@@ -41,10 +44,13 @@
             <div class="option">
                 <label>Color</label>
                 <div class="colors">
-                    <span class="c1"></span>
-                    <span class="c2"></span>
-                    <span class="c3"></span>
-                    <span class="c4 active"></span>
+                 <div class="colors">
+    <span class="c1" data-image="images/image-red.png"></span>
+    <span class="c2" data-image="images/image-yellow.png"></span>
+    <span class="c3" data-image="images/image-white.png"></span>
+    <span class="c4" data-image="images/image-blue.png"></span>
+</div>
+
                 </div>
             </div>
 
@@ -59,7 +65,20 @@
             </div>
 
             <!-- BUTTON -->
-            <button class="add-cart">Add to Cart</button>
+            <div class="cart-row">
+
+    <select id="couponSelect">
+        <option value="0">No Coupon</option>
+        <option value="10">2022 – 10%</option>
+        <option value="20">2023 – 20%</option>
+        <option value="30">2024 – 30%</option>
+        <option value="99">2025 – 99% Chrismast Sale</option>
+    </select>
+
+    <button class="add-cart">Add to Cart</button>
+
+</div>
+
         </div>
 
     </div>
