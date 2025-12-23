@@ -34,6 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     
 }
 
@@ -142,6 +143,12 @@ body {
     text-align: center;
     outline: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 /* CART ROW */
 .cart-row {
     display: flex;
@@ -186,6 +193,24 @@ body {
 }
 .price #price {
     font-size: 22px; /* Keep main price same size */
+}
+/* product Controls */
+.controls-view {
+position: absolute;
+bottom: 40px;
+right: 20px;
+}
+.btn{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    margin: 10px;
+    cursor: pointer;
+}
+.btn.active{
+    background: #1a3815;
 }
 
 
